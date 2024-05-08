@@ -1,11 +1,11 @@
-function isValidBST(root) {
-  let prev = null;
-  return inorder(root);
-  function inorder(node) {
-    if (!node) return true;
-    if (!inorder(node.left)) return false;
-    if (prev !== null && node.val <= prev) return false;
-    prev = node.val;
-    return inorder(node.right);
+function binarySearch(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (arr[mid] === target) return mid;
+    if (arr[mid] < target) low = mid + 1;
+    else high = mid - 1;
   }
+  return -1;
 }
