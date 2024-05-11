@@ -1,5 +1,9 @@
-function kthSmallest(matrix, k) {
-  const flatten = matrix.reduce((acc, row) => acc.concat(row), []);
-  flatten.sort((a, b) => a - b);
-  return flatten[k - 1];
+function isSubsequence(s, t) {
+  let i = 0;
+  let j = 0;
+  while (i < s.length && j < t.length) {
+    if (s[i] === t[j]) i++;
+    j++;
+  }
+  return i === s.length;
 }
